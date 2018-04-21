@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script> <!--CDN DE AXIOS PARA LLAMAR SERVICIOS REST-->
+
+     </head>
+</html>
+        <body>
+            <h1><center>Ejercicio 5</center></h1>
+            <main><!--Esta etiqueta funcionara vue-->
+                <button @click="loadData()">CARGAR</button>
+                    <ol v-if="posts">
+                        <li v-for="(post,idx) in posts">
+                            {{post.title}}
+                        </li>
+                        <span v-else>ESPERANDO DATOS</span>
+                    </ol>
+                {{$data}}<!--PARA IMPRIMIR EL CONTENIDO DE DATA-->
+
+
+            </main>
+        
+        </body>
+        <script type="text/javascript">
+            new Vue({
+                el: 'main',//referencio a la etiqueta -- si tuviera id #nombreid
+                data: {//array en javascript//se usa posts por el place holdes
+                 posts:null
+
+                },
+                methods:{
+                    loadData(){
+                        axios.get("https://jsonplaceholder.typicode.com/posts")
+                        .then((respuesta)=>{
+                            this.posts=respuesta.data;
+                        });
+                      
+                    }
+                },
+            }); 
+        </script> 
+    </head>
+    
+
+
+    

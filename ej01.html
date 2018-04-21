@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+     </head>
+</html>
+        <body>
+            <main><!--Esta etiqueta funcionara vue-->
+                <h1>{{texto}} </h1> <!--es necesario la doble llave--><!--IMPREION DE UNA VARIABKE-->
+                <input type="text" v-model="texto"/><!--ENLACE DE UN COMPONENTE HTML N UNA VARIABLE-->
+                {{$data}}<!--PARA IMPRIMIR EL CONTENIDO DE DATA-->
+
+            </main>
+        
+        </body>
+        <script type="text/javascript">
+            new Vue({
+                el: 'main',//referencio a la etiqueta -- si tuviera id #nombreid
+                data: {
+                    texto:'hola mundo'
+
+                }
+            }); 
+        </script> 
+    </head>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</HTML>
